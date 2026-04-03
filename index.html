@@ -54,6 +54,9 @@
       </div>
     </div>
   </nav>
+  <div class="nav__color-bar">
+    <img src="https://tandemtheory.com/wp-content/themes/tt2026-theme/assets/images/color-bar.svg" alt="" aria-hidden="true">
+  </div>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
@@ -65,16 +68,9 @@
       <div class="hero__video-overlay"></div>
     </div>
 
-    <!-- Particle Canvas -->
-    <canvas id="particles" class="hero__particles"></canvas>
+    <!-- Particles canvas removed per creative direction -->
 
-    <!-- Animated Background Layers (subtle, over video) -->
-    <div class="hero__layers">
-      <div class="layer layer--1"></div>
-      <div class="layer layer--2"></div>
-      <div class="layer layer--3"></div>
-      <div class="layer layer--4"></div>
-    </div>
+    <!-- Red animated layers removed per creative direction -->
 
     <!-- Grid Overlay -->
     <div class="hero__grid"></div>
@@ -621,121 +617,7 @@
 
   <!-- JavaScript -->
   <script>
-    // ========================================
-    // PARTICLE SYSTEM
-    // ========================================
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-
-    let particles = [];
-    let mouseX = 0;
-    let mouseY = 0;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.5 + 0.1;
-        // Red color palette
-        const colors = ['254, 0, 0', '255, 51, 51', '204, 0, 0'];
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        // Mouse interaction
-        const dx = mouseX - this.x;
-        const dy = mouseY - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < 150) {
-          const force = (150 - distance) / 150;
-          this.x -= dx * force * 0.01;
-          this.y -= dy * force * 0.01;
-        }
-
-        // Wrap around edges
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-        ctx.fill();
-      }
-    }
-
-    function initParticles() {
-      particles = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-      }
-    }
-
-    function drawConnections() {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 120) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(254, 0, 0, ${0.1 * (1 - distance / 120)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-      });
-
-      drawConnections();
-      requestAnimationFrame(animate);
-    }
-
-    // Initialize
-    resizeCanvas();
-    initParticles();
-    animate();
-
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      initParticles();
-    });
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
+    // Particles removed per creative direction
 
     // ========================================
     // NAVIGATION
