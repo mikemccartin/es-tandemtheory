@@ -336,6 +336,60 @@ p:last-child {
   color: var(--color-text-secondary);
 }
 
+/* Policy Page */
+.policy-page {
+  padding: 8rem 0 4rem;
+}
+
+.policy-page h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.policy-page h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.policy-page p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.policy-page address {
+  font-style: normal;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.policy-page address a {
+  color: #fe0000;
+}
+
+.policy-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 2rem;
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
 /* Small text */
 .small, small {
   font-size: var(--text-sm);
