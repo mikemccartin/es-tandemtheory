@@ -2427,21 +2427,15 @@ body {
 }
 
 /* ======== CARD FLIP FIX ======== */
-/* Opaque backgrounds so front text doesn't bleed through back face */
-.tandem-tool__front,
-.tandem-tool__back {
-  background: #1c1c1e !important;
-}
-
-.tandem-tool__front {
-  background: #232325 !important;
-}
-
+/* Hide front face when card is flipped to prevent text bleed-through */
 .tandem-tool:hover .tandem-tool__front,
-.tandem-tool:focus-within .tandem-tool__front {
-  background: #2a2a2c !important;
+.tandem-tool:focus-within .tandem-tool__front,
+.tandem-tool.is-flipped .tandem-tool__front {
+  visibility: hidden !important;
 }
 
-.tandem-tool__back {
-  background: linear-gradient(135deg, #3d1010 0%, #2a0808 100%) !important;
+.tandem-tool:hover .tandem-tool__back,
+.tandem-tool:focus-within .tandem-tool__back,
+.tandem-tool.is-flipped .tandem-tool__back {
+  visibility: visible !important;
 }
