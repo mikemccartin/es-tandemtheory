@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tandem Pulse: cómo las marcas pueden ganar consumidores con IA | Tandem Theory</title>
+  <meta name="description" content="El déficit de confianza es real y le cuesta dinero a las marcas. Descubra cómo la IA puede reconstruir la confianza del consumidor con perspectivas accionables del reporte Tandem Pulse.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1c1c1e">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --charcoal: #1c1c1e;
+      --charcoal-light: #2c2c2e;
+      --charcoal-lighter: #3a3a3c;
+      --red-accent: #fe0000;
+      --red-light: #ff3333;
+      --gray-accent: #9ca3af;
+      --white: #ffffff;
+      --white-90: rgba(255, 255, 255, 0.9);
+      --white-70: rgba(255, 255, 255, 0.7);
+      --white-60: rgba(255, 255, 255, 0.6);
+      --white-40: rgba(255, 255, 255, 0.4);
+      --white-10: rgba(255, 255, 255, 0.1);
+      --white-05: rgba(255, 255, 255, 0.05);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition-fast: 150ms ease;
+      --transition-base: 300ms ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-primary); background: var(--charcoal); color: var(--white); line-height: 1.6; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6); }
+    .header { padding: var(--space-6) 0; border-bottom: 1px solid var(--white-10); }
+    .header__inner { display: flex; justify-content: space-between; align-items: center; }
+    .header__logo img { height: 44px; width: auto; }
+
+    .article-back { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--white-60); font-size: 0.875rem; margin-top: var(--space-8); transition: color var(--transition-fast); }
+    .article-back:hover { color: var(--white); }
+
+    .article-header { padding: var(--space-16) 0 var(--space-8); max-width: 800px; margin: 0 auto; }
+    .article-header__date { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red-accent); margin-bottom: var(--space-4); }
+    .article-header__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.25; margin-bottom: var(--space-4); }
+    .article-header__author { font-size: 0.9375rem; color: var(--white-60); }
+
+    .article-body { max-width: 800px; margin: 0 auto; padding-bottom: var(--space-20); }
+    .article-body p { font-size: 1.0625rem; color: var(--white-90); line-height: 1.8; margin-bottom: var(--space-6); }
+    .article-body h2 { font-size: 1.5rem; font-weight: 700; margin-top: var(--space-12); margin-bottom: var(--space-6); color: var(--white); }
+    .article-body h3 { font-size: 1.1875rem; font-weight: 600; margin-top: var(--space-8); margin-bottom: var(--space-4); color: var(--white); }
+    .article-body ul, .article-body ol { margin-bottom: var(--space-6); padding-left: var(--space-6); }
+    .article-body li { font-size: 1.0625rem; color: var(--white-90); line-height: 1.8; margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--red-accent); padding-left: var(--space-6); margin: var(--space-8) 0; font-style: italic; color: var(--white-70); }
+    .article-body strong { color: var(--white); font-weight: 600; }
+
+    .stat-highlight { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-6); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--white-10); border-radius: var(--radius-lg); margin: var(--space-8) 0; }
+    .stat-highlight p { margin-bottom: 0.5rem; }
+
+    .footer { padding: var(--space-16) 0 var(--space-8); border-top: 1px solid var(--white-10); }
+    .footer__inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-8); }
+    .footer__logo img { height: 40px; width: auto; opacity: 0.8; }
+    .footer__tagline { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--red-light); }
+    .footer__links { display: flex; gap: var(--space-8); font-size: 0.875rem; }
+    .footer__links a { color: var(--white-60); transition: color var(--transition-fast); }
+    .footer__links a:hover { color: var(--white); }
+    .footer__copyright { font-size: 0.8125rem; color: var(--white-40); }
+  </style>
+</head>
+<body>
+
+  <nav class="header" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(28, 28, 30, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+        <ul style="display: flex; align-items: center; gap: 2rem; list-style: none;">
+          <li><a href="index.html#humans" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Nosotros</a></li>
+          <li><a href="index.html#platform" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Tecnología</a></li>
+          <li><a href="index.html#capabilities" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Servicios</a></li>
+          <li><a href="index.html#results" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Resultados</a></li>
+          <li><a href="index.html#contact" style="padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 500; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--white);">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="height: 80px;"></div>
+
+  <main>
+    <div class="container">
+      <a href="insights.html" class="article-back">← Volver a perspectivas</a>
+    </div>
+
+    <article>
+      <header class="article-header container">
+        <div class="article-header__date">20 de mayo de 2025</div>
+        <h1 class="article-header__title">Tandem Pulse: cómo las marcas pueden ganar consumidores con IA</h1>
+        <p class="article-header__author">Madonna Jansen</p>
+      </header>
+
+      <div class="article-body container">
+
+        <p>En un mundo de escepticismo creciente y saturación de IA, ¿cómo pueden las marcas mantenerse confiables, elegidas y relevantes?</p>
+
+        <p>Descargue <strong>Tandem Pulse: el déficit de confianza</strong>, nuestro reporte de tendencias de marketing con perspectivas accionables, ejemplos reales de marcas y un checklist para construir confianza impulsada por IA.</p>
+
+        <h2>El déficit de confianza es real y le está costando dinero a las marcas</h2>
+
+        <p>Los consumidores no están cansados de las marcas; están cansados de las malas experiencias. La edición del segundo trimestre de 2025 de Tandem Pulse revela desafíos de confianza significativos para los profesionales de marketing actuales:</p>
+
+        <div class="stat-highlight">
+          <p><strong>88%</strong> de los consumidores afirma que la confianza es un factor crítico al elegir una marca.</p>
+          <p><strong>72%</strong> dice confiar menos en las empresas que hace un año.</p>
+          <p><strong>45%</strong> abandona compras por falta de confianza.</p>
+        </div>
+
+        <p>Las presiones económicas, la fatiga algorítmica y la ansiedad por la IA elevaron la exigencia para ganar y mantener la lealtad del cliente.</p>
+
+        <h2>¿Por qué este reporte importa ahora?</h2>
+
+        <p>La adopción de IA se está acelerando: <strong>el 92% de los líderes empresariales espera aumentar su inversión en IA durante los próximos tres años</strong>, pero solo el 25% cuenta con estrategias de implementación adecuadas. Los sentimientos de los consumidores revelan reacciones encontradas:</p>
+
+        <div class="stat-highlight">
+          <p><strong>71%</strong> se preocupa por no poder confiar en lo que ve o escucha debido a la IA.</p>
+          <p><strong>73%</strong> cree que la IA beneficiará a las marcas, pero no a ellos personalmente.</p>
+        </div>
+
+        <p>Este reporte examina lo que está en juego e identifica las oportunidades clave dentro de este panorama cambiante del consumidor.</p>
+
+        <h2>Tendencias clave del reporte del segundo trimestre de 2025: IA que nos hace más humanos, no menos</h2>
+
+        <h3>1. Precios</h3>
+        <p>Las marcas que ganan entregarán valor, no solo descuentos.</p>
+
+        <h3>2. Experiencia del cliente</h3>
+        <p>Anticipar necesidades antes de que surjan es el nuevo motor de lealtad.</p>
+
+        <h3>3. Servicio al cliente</h3>
+        <p>La automatización debe potenciar el soporte, no reemplazar la conexión real.</p>
+
+        <h3>4. Conveniencia</h3>
+        <p>Lo fluido es bueno... ser visto es mejor.</p>
+
+        <h3>5. Relevancia</h3>
+        <p>La personalización solo funciona cuando se siente intencional, no automatizada.</p>
+
+        <h2>¿Qué distingue a Tandem Theory?</h2>
+
+        <p>En Tandem Theory, nuestra filosofía se centra en la combinación de Humans + Technology. Ayudamos a marcas líderes del sector de alimentos y retail a combinar inteligencia emocional con inteligencia artificial para:</p>
+
+        <ul>
+          <li><strong>Convertir</strong> nuevos clientes a través de creatividad y medios escalables, basados en datos</li>
+          <li><strong>Retener</strong> clientes con recorridos más inteligentes y experiencias personalizadas</li>
+          <li><strong>Crecer</strong> con perspectivas accionables y optimización continua</li>
+        </ul>
+
+        <h2>Obtenga el reporte completo</h2>
+
+        <p>Para explorar qué significan estas tendencias para su marca, escríbanos a hello@tandemtheory.com.</p>
+
+        <p>Descargue <strong>Tandem Pulse: el déficit de confianza</strong> para cerrar la brecha entre su marca y sus compradores.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="footer__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+        <p class="footer__tagline">HUMANS + TECHNOLOGY</p>
+        <div class="footer__links">
+          <a href="index.html">Inicio</a>
+          <a href="mailto:hello@tandemtheory.com">hello@tandemtheory.com</a>
+          <a href="privacy-policy.html">Aviso de privacidad</a>
+        </div>
+        <p class="footer__copyright">2026 Tandem Theory. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

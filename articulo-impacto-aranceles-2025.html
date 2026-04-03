@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C&oacute;mo navegar el impacto de los aranceles de 2025 en las empresas estadounidenses | Tandem Theory</title>
+  <meta name="description" content="Los aranceles de 2025 generaron un efecto domin&oacute; en la econom&iacute;a estadounidense. Estrategias de marketing para cada industria ante la incertidumbre arancelaria.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1c1c1e">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --charcoal: #1c1c1e;
+      --charcoal-light: #2c2c2e;
+      --charcoal-lighter: #3a3a3c;
+      --red-accent: #fe0000;
+      --red-light: #ff3333;
+      --gray-accent: #9ca3af;
+      --white: #ffffff;
+      --white-90: rgba(255, 255, 255, 0.9);
+      --white-70: rgba(255, 255, 255, 0.7);
+      --white-60: rgba(255, 255, 255, 0.6);
+      --white-40: rgba(255, 255, 255, 0.4);
+      --white-10: rgba(255, 255, 255, 0.1);
+      --white-05: rgba(255, 255, 255, 0.05);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition-fast: 150ms ease;
+      --transition-base: 300ms ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--charcoal);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .header {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header__logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .article-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--white-60);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-12);
+      transition: color var(--transition-fast);
+    }
+
+    .back-link:hover {
+      color: var(--white);
+    }
+
+    .article-header {
+      margin-bottom: var(--space-12);
+    }
+
+    .article-header__label {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red-accent);
+      margin-bottom: var(--space-4);
+    }
+
+    .article-header__title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--space-6);
+    }
+
+    .article-header__meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gray-accent);
+    }
+
+    .article-body {
+      padding-bottom: var(--space-20);
+    }
+
+    .article-body p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--white-90);
+      margin-bottom: var(--space-6);
+    }
+
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+    }
+
+    .article-body h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+    }
+
+    .article-body ul, .article-body ol {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-6);
+    }
+
+    .article-body li {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--white-90);
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid var(--red-accent);
+      padding-left: var(--space-6);
+      margin: var(--space-8) 0;
+      font-style: italic;
+      color: var(--white-70);
+    }
+
+    .article-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: var(--space-16) 0 var(--space-8);
+      border-top: 1px solid var(--white-10);
+    }
+
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    .footer__logo img {
+      height: 40px;
+      width: auto;
+      opacity: 0.8;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--red-light);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: var(--space-8);
+      font-size: 0.875rem;
+    }
+
+    .footer__links a {
+      color: var(--white-60);
+      transition: color var(--transition-fast);
+    }
+
+    .footer__links a:hover {
+      color: var(--white);
+    }
+
+    .footer__copyright {
+      font-size: 0.8125rem;
+      color: var(--white-40);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="header" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(28, 28, 30, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+        <ul style="display: flex; align-items: center; gap: 2rem; list-style: none;">
+          <li><a href="index.html#humans" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Nosotros</a></li>
+          <li><a href="index.html#platform" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Tecnolog&iacute;a</a></li>
+          <li><a href="index.html#capabilities" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Servicios</a></li>
+          <li><a href="index.html#results" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Resultados</a></li>
+          <li><a href="index.html#contact" style="padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 500; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--white);">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="height: 80px;"></div>
+
+  <main>
+    <div class="article-container">
+      <a href="insights.html" class="back-link">&larr; Volver a perspectivas</a>
+
+      <header class="article-header">
+        <span class="article-header__label">Perspectivas</span>
+        <h1 class="article-header__title">C&oacute;mo navegar el impacto de los aranceles de 2025 en las empresas y estrategias de marketing estadounidenses</h1>
+        <div class="article-header__meta">18 de abril de 2025 &middot; Austin Wright, director de estrategia y anal&iacute;tica</div>
+      </header>
+
+      <div class="article-body">
+        <h2>Introducci&oacute;n</h2>
+
+        <p>Los aranceles de 2025 &mdash;que incluyen un arancel universal del 10% y medidas dirigidas a socios comerciales clave&mdash; est&aacute;n alterando la econom&iacute;a estadounidense y transformando las operaciones empresariales. La confusi&oacute;n y el agotamiento de los consumidores dominan el mercado, mientras los cambios de pol&iacute;tica generan volatilidad. Muchos compradores mantienen la cautela en su gasto a pesar de las pausas arancelarias, anticipando nuevas disrupciones.</p>
+
+        <p>Las marcas enfrentan un escepticismo creciente, ya que los consumidores examinan las decisiones de precios y cuestionan si las empresas est&aacute;n ajustando costos de manera genuina o aprovechando la incertidumbre. Este entorno exige mayor investigaci&oacute;n, b&uacute;squeda de ofertas y priorizaci&oacute;n del valor por encima de la lealtad a la marca.</p>
+
+        <h2>Impacto de los aranceles por industria</h2>
+
+        <h3>Cronolog&iacute;a de efectos</h3>
+
+        <p><strong>Corto plazo (0&ndash;4 meses):</strong></p>
+        <ul>
+          <li>Retail y comercio electr&oacute;nico</li>
+          <li>Bienes de consumo empaquetados</li>
+          <li>Tecnolog&iacute;a y electr&oacute;nica</li>
+          <li>Alimentos, bebidas y restaurantes de servicio r&aacute;pido</li>
+        </ul>
+
+        <p><strong>Mediano plazo (5&ndash;8 meses):</strong></p>
+        <ul>
+          <li>Automotriz y transporte</li>
+          <li>Salud y farmac&eacute;utica</li>
+          <li>Viajes, hospitalidad y entretenimiento</li>
+          <li>Mejoras para el hogar y bienes duraderos</li>
+        </ul>
+
+        <p><strong>Largo plazo (9+ meses):</strong></p>
+        <ul>
+          <li>Servicios financieros</li>
+          <li>Medios y entretenimiento</li>
+        </ul>
+
+        <h3>Impactos espec&iacute;ficos por industria</h3>
+
+        <p><strong>Retail y comercio electr&oacute;nico:</strong> los mayores costos de ropa, electr&oacute;nica y art&iacute;culos para el hogar importados amenazan los m&aacute;rgenes. Se esperan aumentos de precios dentro de cuatro meses a medida que la rotaci&oacute;n de inventario refleje los nuevos costos.</p>
+
+        <p><strong>Bienes de consumo empaquetados:</strong> las importaciones de materias primas (aceites, especias, empaques) enfrentan aranceles. Los ajustes en el ciclo de producci&oacute;n se manifestar&aacute;n en meses, lo que exige transparencia sobre los cambios de precio.</p>
+
+        <p><strong>Automotriz y transporte:</strong> un arancel del 25% sobre veh&iacute;culos y autopartes importados altera cadenas de suministro con un valor anual de 460,000 millones de d&oacute;lares. &laquo;Se espera que los consumidores vean aumentos de precios en un plazo de cinco a ocho meses&raquo;, mientras los fabricantes equilibran la absorci&oacute;n de costos con las demandas del mercado.</p>
+
+        <p><strong>Salud y farmac&eacute;utica:</strong> los aranceles sobre medicamentos y dispositivos m&eacute;dicos importados generan presiones de costo a mediano plazo, conforme los inventarios existentes se agotan en un periodo de cinco a ocho meses.</p>
+
+        <p><strong>Tecnolog&iacute;a y electr&oacute;nica:</strong> la dependencia de componentes globales hace vulnerable a este sector. &laquo;Se esperan aumentos de precios en electr&oacute;nica de consumo, como tel&eacute;fonos inteligentes y computadoras port&aacute;tiles, dentro de los primeros cuatro meses.&raquo;</p>
+
+        <p><strong>Alimentos, bebidas y restaurantes de servicio r&aacute;pido:</strong> aunque no est&aacute;n sujetos directamente a aranceles, las presiones inflacionarias reducen r&aacute;pidamente el gasto discrecional. Los restaurantes de servicio r&aacute;pido son particularmente vulnerables cuando los consumidores recortan compras no esenciales.</p>
+
+        <p><strong>Viajes, hospitalidad y entretenimiento:</strong> los impactos indirectos por la reducci&oacute;n del gasto discrecional surgen en un plazo de cinco a ocho meses, conforme los consumidores priorizan compras esenciales.</p>
+
+        <p><strong>Servicios financieros:</strong> exposici&oacute;n directa m&iacute;nima, pero efectos secundarios de la desaceleraci&oacute;n econ&oacute;mica pueden surgir a largo plazo (9+ meses).</p>
+
+        <p><strong>Mejoras para el hogar y bienes duraderos:</strong> impactos a mediano plazo por mayores costos de materiales importados (acero, aluminio) reducen la demanda de proyectos en un plazo de cinco a ocho meses.</p>
+
+        <p><strong>Medios y entretenimiento:</strong> bajo impacto directo, con efectos potenciales a largo plazo si los consumidores reducen suscripciones o gasto en entretenimiento.</p>
+
+        <h2>Estrategias accionables para directores de marketing</h2>
+
+        <h3>Para industrias con aumentos directos de costos</h3>
+
+        <p><strong>Comunicaci&oacute;n transparente:</strong> explique con claridad los ajustes de precios, enfatizando factores externos. Utilice narrativas que destaquen el compromiso con la calidad y el valor a pesar de los desaf&iacute;os.</p>
+
+        <p><strong>Narrativas de producci&oacute;n nacional:</strong> aproveche el mensaje &laquo;Hecho en Estados Unidos&raquo; para generar confianza durante la incertidumbre. Destaque el apoyo a proveedores locales y la menor dependencia de importaciones.</p>
+
+        <p><strong>Campa&ntilde;as centradas en el valor:</strong> conc&eacute;ntrese en productos de alto margen resistentes a los aranceles. Cree paquetes que generen una percepci&oacute;n de valor que compense los aumentos de precio.</p>
+
+        <p><strong>Estrategias de retenci&oacute;n de clientes:</strong> implemente programas de lealtad que recompensen las compras recurrentes. Ofrezca opciones de pago flexibles para art&iacute;culos de mayor valor.</p>
+
+        <h3>Para industrias que enfrentan presiones indirectas</h3>
+
+        <p><strong>Mensajes de accesibilidad:</strong> destaque opciones econ&oacute;micas (men&uacute;s de valor, soluciones para hacer en casa). Posicione los productos como decisiones inteligentes para consumidores conscientes del costo.</p>
+
+        <p><strong>Promociones y descuentos:</strong> lance promociones dirigidas durante periodos pico. Ofrezca precios escalonados que atraigan tanto al segmento econ&oacute;mico como al premium.</p>
+
+        <p><strong>Perspectivas basadas en datos:</strong> monitoree los cambios en el comportamiento del consumidor a trav&eacute;s de anal&iacute;tica. Pruebe variaciones de mensajes en canales digitales.</p>
+
+        <p><strong>Compromiso con la comunidad:</strong> genere buena voluntad a trav&eacute;s de alianzas e iniciativas ben&eacute;ficas vinculadas a la recuperaci&oacute;n econ&oacute;mica.</p>
+
+        <h3>Para industrias con exposici&oacute;n m&iacute;nima</h3>
+
+        <p><strong>Posicionamiento como alternativas estables:</strong> enfatice la estabilidad de la marca durante la incertidumbre, brindando al cliente la seguridad de confiabilidad.</p>
+
+        <p><strong>Marketing de contenido educativo:</strong> cree contenido que aborde la incertidumbre financiera (consejos de presupuesto, estrategias de inversi&oacute;n). Ofrezca entretenimiento accesible como v&iacute;a de escape.</p>
+
+        <p><strong>Construcci&oacute;n de marca a largo plazo:</strong> mantenga presencia de marketing mientras los competidores reducen su inversi&oacute;n, asegurando la recordaci&oacute;n de marca cuando el gasto se recupere.</p>
+
+        <p><strong>Estrategias de retenci&oacute;n por suscripci&oacute;n:</strong> introduzca niveles de precios flexibles o descuentos temporales para retener a suscriptores que enfrentan restricciones presupuestarias.</p>
+
+        <h2>Conclusi&oacute;n clave</h2>
+
+        <blockquote>
+          <p>&laquo;Los aranceles de 2025 generaron un efecto domin&oacute; en la econom&iacute;a estadounidense, impactando industrias, el comportamiento del consumidor y las estrategias de marketing.&raquo;</p>
+        </blockquote>
+
+        <p>El &eacute;xito requiere comprender los impactos espec&iacute;ficos de cada industria, anticipar los tiempos y adaptar los mensajes para priorizar la transparencia, el valor y la confianza del cliente.</p>
+
+        <p>Para desarrollar una estrategia adaptada a su industria, contacte a Austin Wright en <a href="mailto:austin.wright@tandemtheory.com" style="color: var(--red-accent);">austin.wright@tandemtheory.com</a> o a <a href="mailto:hello@tandemtheory.com" style="color: var(--red-accent);">hello@tandemtheory.com</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="footer__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+
+        <p class="footer__tagline">HUMANS + TECHNOLOGY</p>
+
+        <div class="footer__links">
+          <a href="index.html">Inicio</a>
+          <a href="mailto:hello@tandemtheory.com">hello@tandemtheory.com</a>
+          <a href="privacy-policy.html">Aviso de privacidad</a>
+        </div>
+
+        <p class="footer__copyright">2026 Tandem Theory. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

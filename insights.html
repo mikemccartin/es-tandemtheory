@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perspectivas | Tandem Theory</title>
+  <meta name="description" content="Investigación original, perspectivas estratégicas y análisis de la industria del equipo de Tandem Theory.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1c1c1e">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --charcoal: #1c1c1e;
+      --charcoal-light: #2c2c2e;
+      --charcoal-lighter: #3a3a3c;
+      --red-accent: #fe0000;
+      --red-light: #ff3333;
+      --gray-accent: #9ca3af;
+      --white: #ffffff;
+      --white-90: rgba(255, 255, 255, 0.9);
+      --white-70: rgba(255, 255, 255, 0.7);
+      --white-60: rgba(255, 255, 255, 0.6);
+      --white-40: rgba(255, 255, 255, 0.4);
+      --white-10: rgba(255, 255, 255, 0.1);
+      --white-05: rgba(255, 255, 255, 0.05);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition-fast: 150ms ease;
+      --transition-base: 300ms ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--charcoal);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* Header */
+    .header {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header__logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .header__back {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      color: var(--white-60);
+      font-size: 0.875rem;
+      transition: color var(--transition-fast);
+    }
+
+    .header__back:hover {
+      color: var(--white);
+    }
+
+    .header__back svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: var(--space-20) 0 var(--space-16);
+      text-align: center;
+    }
+
+    .page-header__label {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red-accent);
+      margin-bottom: var(--space-4);
+    }
+
+    .page-header__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: var(--space-6);
+    }
+
+    .page-header__subtitle {
+      font-size: 1.125rem;
+      color: var(--white-70);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Insights Grid */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      padding-bottom: var(--space-20);
+    }
+
+    .insight-card {
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-6);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--white-10);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base);
+    }
+
+    .insight-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--red-accent);
+      transform: translateY(-4px);
+    }
+
+    .insight-card__date {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-accent);
+      margin-bottom: var(--space-4);
+    }
+
+    .insight-card__title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: var(--space-4);
+    }
+
+    .insight-card__excerpt {
+      font-size: 0.9375rem;
+      color: var(--white-60);
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: var(--space-6);
+    }
+
+    .insight-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-4);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--red-accent);
+      transition: gap var(--transition-fast);
+    }
+
+    .insight-card:hover .insight-card__link {
+      gap: calc(var(--space-4) + 4px);
+    }
+
+    .insight-card__link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--space-16) 0 var(--space-8);
+      border-top: 1px solid var(--white-10);
+    }
+
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    .footer__logo img {
+      height: 40px;
+      width: auto;
+      opacity: 0.8;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--red-light);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: var(--space-8);
+      font-size: 0.875rem;
+    }
+
+    .footer__links a {
+      color: var(--white-60);
+      transition: color var(--transition-fast);
+    }
+
+    .footer__links a:hover {
+      color: var(--white);
+    }
+
+    .footer__copyright {
+      font-size: 0.8125rem;
+      color: var(--white-40);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="header" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(28, 28, 30, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+        <ul style="display: flex; align-items: center; gap: 2rem; list-style: none;">
+          <li><a href="index.html#humans" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Nosotros</a></li>
+          <li><a href="index.html#platform" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Tecnología</a></li>
+          <li><a href="index.html#capabilities" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Servicios</a></li>
+          <li><a href="index.html#results" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Resultados</a></li>
+          <li><a href="index.html#contact" style="padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 500; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--white);">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="height: 80px;"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="page-header__label">Perspectivas</span>
+        <h1 class="page-header__title">Ideas que impulsan resultados</h1>
+        <p class="page-header__subtitle">
+          Investigación original, perspectivas estratégicas y análisis de la industria de nuestro equipo.
+        </p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="insights-grid">
+        <a href="articulo-estrategia-de-marca.html" class="insight-card">
+          <div class="insight-card__date">3 de abril de 2026</div>
+          <h3 class="insight-card__title">Estrategia de marca como sistema: cómo los CMO convierten el posicionamiento en acción</h3>
+          <p class="insight-card__excerpt">La estrategia de marca va mucho más allá de elegir un logotipo, una paleta de colores, tipografías y un eslogan.</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="articulo-mas-alla-del-embudo.html" class="insight-card">
+          <div class="insight-card__date">27 de marzo de 2026</div>
+          <h3 class="insight-card__title">Más allá del embudo: cómo construir un mapa de recorrido del cliente no lineal que refleje la realidad</h3>
+          <p class="insight-card__excerpt">El mapeo lineal tradicional del recorrido del cliente no corresponde con los patrones reales de comportamiento del consumidor.</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="articulo-marcas-consumidores-ia.html" class="insight-card">
+          <div class="insight-card__date">20 de mayo de 2025</div>
+          <h3 class="insight-card__title">Tandem Pulse: cómo las marcas pueden ganar consumidores con IA</h3>
+          <p class="insight-card__excerpt">En un mundo de escepticismo creciente y saturación de IA, ¿cómo pueden las marcas mantenerse confiables, elegidas y relevantes?</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="articulo-ia-personalizacion-crm.html" class="insight-card">
+          <div class="insight-card__date">5 de mayo de 2025</div>
+          <h3 class="insight-card__title">Precisión a escala: cómo la IA está transformando la personalización del CRM</h3>
+          <p class="insight-card__excerpt">La pregunta no es si adoptar la IA, sino cómo integrarla de manera significativa en todo el ciclo de vida del CRM.</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="articulo-ser-dueno-de-tu-ethos.html" class="insight-card">
+          <div class="insight-card__date">25 de abril de 2025</div>
+          <h3 class="insight-card__title">Defender su esencia: cultura, convicción y desempeño empresarial</h3>
+          <p class="insight-card__excerpt">¿El posicionamiento contracultural de marca beneficia o perjudica el desempeño del negocio? Un análisis basado en datos.</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="articulo-impacto-aranceles-2025.html" class="insight-card">
+          <div class="insight-card__date">18 de abril de 2025</div>
+          <h3 class="insight-card__title">Cómo navegar el impacto de los aranceles de 2025 en las empresas estadounidenses</h3>
+          <p class="insight-card__excerpt">Los aranceles de 2025 generaron un efecto dominó en la economía estadounidense, impactando industrias y estrategias de marketing.</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="articulo-megan-flynn-premio.html" class="insight-card">
+          <div class="insight-card__date">5 de febrero de 2025</div>
+          <h3 class="insight-card__title">La CSO Megan Flynn fue reconocida en los C-Suite Awards del Dallas Business Journal</h3>
+          <p class="insight-card__excerpt">Reconocimiento a la excelencia en liderazgo estratégico en los prestigiosos C-Suite Leader Awards del Dallas Business Journal.</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="articulo-tendencias-consumidor-2025.html" class="insight-card">
+          <div class="insight-card__date">23 de enero de 2025</div>
+          <h3 class="insight-card__title">Tandem Pulse: tendencias del consumidor 2025</h3>
+          <p class="insight-card__excerpt">Explore Tandem Pulse: Navegando el año de las contradicciones para descubrir las estrategias y tendencias que usted necesita.</p>
+          <span class="insight-card__link">
+            Leer más
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="footer__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+
+        <p class="footer__tagline">HUMANS + TECHNOLOGY</p>
+
+        <div class="footer__links">
+          <a href="index.html">Inicio</a>
+          <a href="mailto:hello@tandemtheory.com">hello@tandemtheory.com</a>
+          <a href="privacy-policy.html">Aviso de privacidad</a>
+        </div>
+
+        <p class="footer__copyright">2026 Tandem Theory. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

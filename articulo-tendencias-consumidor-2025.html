@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tandem Pulse: tendencias del consumidor 2025 | Tandem Theory</title>
+  <meta name="description" content="Tandem Theory presenta su reporte Tandem Pulse: navegando el a&ntilde;o de las contradicciones. Descubra las tendencias y estrategias que definen el mercado de 2025.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1c1c1e">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --charcoal: #1c1c1e;
+      --charcoal-light: #2c2c2e;
+      --charcoal-lighter: #3a3a3c;
+      --red-accent: #fe0000;
+      --red-light: #ff3333;
+      --gray-accent: #9ca3af;
+      --white: #ffffff;
+      --white-90: rgba(255, 255, 255, 0.9);
+      --white-70: rgba(255, 255, 255, 0.7);
+      --white-60: rgba(255, 255, 255, 0.6);
+      --white-40: rgba(255, 255, 255, 0.4);
+      --white-10: rgba(255, 255, 255, 0.1);
+      --white-05: rgba(255, 255, 255, 0.05);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition-fast: 150ms ease;
+      --transition-base: 300ms ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--charcoal);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .header {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header__logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .article-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--white-60);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-12);
+      transition: color var(--transition-fast);
+    }
+
+    .back-link:hover {
+      color: var(--white);
+    }
+
+    .article-header {
+      margin-bottom: var(--space-12);
+    }
+
+    .article-header__label {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red-accent);
+      margin-bottom: var(--space-4);
+    }
+
+    .article-header__title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--space-6);
+    }
+
+    .article-header__meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gray-accent);
+    }
+
+    .article-body {
+      padding-bottom: var(--space-20);
+    }
+
+    .article-body p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--white-90);
+      margin-bottom: var(--space-6);
+    }
+
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+    }
+
+    .article-body h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+    }
+
+    .article-body ul, .article-body ol {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-6);
+    }
+
+    .article-body li {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--white-90);
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid var(--red-accent);
+      padding-left: var(--space-6);
+      margin: var(--space-8) 0;
+      font-style: italic;
+      color: var(--white-70);
+    }
+
+    .article-body strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: rgba(254, 0, 0, 0.05);
+      border: 1px solid rgba(254, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: var(--space-6);
+      margin: var(--space-8) 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      padding: var(--space-16) 0 var(--space-8);
+      border-top: 1px solid var(--white-10);
+    }
+
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    .footer__logo img {
+      height: 40px;
+      width: auto;
+      opacity: 0.8;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--red-light);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: var(--space-8);
+      font-size: 0.875rem;
+    }
+
+    .footer__links a {
+      color: var(--white-60);
+      transition: color var(--transition-fast);
+    }
+
+    .footer__links a:hover {
+      color: var(--white);
+    }
+
+    .footer__copyright {
+      font-size: 0.8125rem;
+      color: var(--white-40);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="header" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(28, 28, 30, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+        <ul style="display: flex; align-items: center; gap: 2rem; list-style: none;">
+          <li><a href="index.html#humans" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Nosotros</a></li>
+          <li><a href="index.html#platform" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Tecnolog&iacute;a</a></li>
+          <li><a href="index.html#capabilities" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Servicios</a></li>
+          <li><a href="index.html#results" style="font-size: 0.875rem; font-weight: 500; color: var(--white-70); transition: color 150ms;">Resultados</a></li>
+          <li><a href="index.html#contact" style="padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 500; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--white);">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="height: 80px;"></div>
+
+  <main>
+    <div class="article-container">
+      <a href="insights.html" class="back-link">&larr; Volver a perspectivas</a>
+
+      <header class="article-header">
+        <span class="article-header__label">Perspectivas</span>
+        <h1 class="article-header__title">Tandem Pulse: tendencias del consumidor 2025</h1>
+        <div class="article-header__meta">23 de enero de 2025 &middot; Madonna Jansen</div>
+      </header>
+
+      <div class="article-body">
+        <p>Tandem Theory present&oacute; &laquo;Tandem Pulse: navegando el a&ntilde;o de las contradicciones&raquo;, un reporte de tendencias del consumidor que examina c&oacute;mo los compradores est&aacute;n adoptando comportamientos y preferencias en aparente conflicto.</p>
+
+        <h2>Hallazgos clave del reporte</h2>
+
+        <p>El reporte explora varios temas centrales que definen el panorama del consumo en 2025:</p>
+
+        <div class="highlight-box">
+          <p><strong>Contradicciones del consumidor:</strong> la aparici&oacute;n de comportamientos contradictorios en los consumidores y sus implicaciones para la estrategia de marca.</p>
+          <p><strong>Tendencias cr&iacute;ticas:</strong> los cambios conductuales m&aacute;s importantes que est&aacute;n definiendo el mercado de 2025.</p>
+          <p><strong>Enfoques pr&aacute;cticos:</strong> estrategias concretas para que las marcas tengan &eacute;xito en un entorno de alta complejidad.</p>
+        </div>
+
+        <h2>El mensaje para las marcas</h2>
+
+        <p>El equipo de Tandem Theory se&ntilde;ala que &laquo;los consumidores est&aacute;n adoptando dualidades, y las marcas que puedan innovar, adaptarse y conectar ser&aacute;n las que lideren el camino&raquo;. Esto sugiere que comprender los comportamientos parad&oacute;jicos del consumidor es esencial para obtener una ventaja competitiva este a&ntilde;o.</p>
+
+        <p>En un momento en el que los compradores buscan simult&aacute;neamente autenticidad y novedad, ahorro y experiencias premium, privacidad y personalizaci&oacute;n, las marcas necesitan marcos estrat&eacute;gicos capaces de abrazar estas tensiones en lugar de resolverlas.</p>
+
+        <h2>El a&ntilde;o de las contradicciones</h2>
+
+        <p>El 2025 se perfila como un a&ntilde;o en el que las reglas tradicionales de segmentaci&oacute;n de mercado ya no aplican de manera lineal. Los consumidores no encajan en categor&iacute;as r&iacute;gidas: el mismo individuo puede buscar descuentos agresivos en una categor&iacute;a y gastar generosamente en otra. Comprender estas dualidades no es opcional &mdash;es la clave para conectar de manera significativa.</p>
+
+        <h2>Acceso al reporte completo</h2>
+
+        <p>&iquest;Le interesa desarrollar estrategias alineadas con las necesidades del consumidor actual? Solicite el reporte completo de Tandem Pulse contactando a Tandem Theory en <a href="mailto:hello@tandemtheory.com" style="color: var(--red-accent);">hello@tandemtheory.com</a>.</p>
+
+        <p>El reporte se posiciona como un recurso esencial para las marcas que buscan comprender y capitalizar la naturaleza multifac&eacute;tica del comportamiento del consumidor moderno a lo largo de 2025.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="footer__logo">
+          <img src="photos/tandem-logo.png" alt="Tandem Theory">
+        </a>
+
+        <p class="footer__tagline">HUMANS + TECHNOLOGY</p>
+
+        <div class="footer__links">
+          <a href="index.html">Inicio</a>
+          <a href="mailto:hello@tandemtheory.com">hello@tandemtheory.com</a>
+          <a href="privacy-policy.html">Aviso de privacidad</a>
+        </div>
+
+        <p class="footer__copyright">2026 Tandem Theory. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
