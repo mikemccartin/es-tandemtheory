@@ -2425,3 +2425,26 @@ body {
     width: 100%;
   }
 }
+
+/* ======== CARD FLIP FIX ======== */
+/* Force backface-visibility on tool cards — override for static HTML sites */
+.tandem-tool {
+  perspective: 1000px !important;
+}
+
+.tandem-tool__inner {
+  transform-style: preserve-3d !important;
+}
+
+.tandem-tool__front,
+.tandem-tool__back {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.tandem-tool__back {
+  transform: rotateY(180deg) !important;
+}
