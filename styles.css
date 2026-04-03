@@ -2427,24 +2427,21 @@ body {
 }
 
 /* ======== CARD FLIP FIX ======== */
-/* Force backface-visibility on tool cards — override for static HTML sites */
-.tandem-tool {
-  perspective: 1000px !important;
-}
-
-.tandem-tool__inner {
-  transform-style: preserve-3d !important;
-}
-
+/* Opaque backgrounds so front text doesn't bleed through back face */
 .tandem-tool__front,
 .tandem-tool__back {
-  -webkit-backface-visibility: hidden !important;
-  backface-visibility: hidden !important;
-  position: absolute !important;
-  width: 100% !important;
-  height: 100% !important;
+  background: #1c1c1e !important;
+}
+
+.tandem-tool__front {
+  background: #232325 !important;
+}
+
+.tandem-tool:hover .tandem-tool__front,
+.tandem-tool:focus-within .tandem-tool__front {
+  background: #2a2a2c !important;
 }
 
 .tandem-tool__back {
-  transform: rotateY(180deg) !important;
+  background: linear-gradient(135deg, #3d1010 0%, #2a0808 100%) !important;
 }
