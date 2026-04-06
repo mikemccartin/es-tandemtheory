@@ -350,32 +350,42 @@ body {
     justify-content: center;
     gap: var(--space-8);
     background: #1c1c1e;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     z-index: calc(var(--z-modal) - 1);
-    opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-base), visibility var(--transition-base);
+    pointer-events: none;
+    transition: visibility var(--transition-base);
   }
 
   .nav__menu.active {
-    opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .nav__link {
     font-size: 1.5rem;
+    color: var(--white);
   }
 
   .nav__lang {
     margin-left: 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
   }
 
-  .nav__lang-link,
-  .nav__lang-active,
+  .nav__lang-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.25rem;
+  }
+
+  .nav__lang-active {
+    font-size: 1.25rem;
+  }
+
   .nav__lang-divider {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }
 /* ======== HERO ======== */
