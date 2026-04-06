@@ -349,10 +349,13 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: var(--space-8);
-    background: var(--charcoal);
+    background: rgba(28, 28, 30, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: calc(var(--z-modal) - 1);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition-base);
+    transition: opacity var(--transition-base), visibility var(--transition-base);
   }
 
   .nav__menu.active {
