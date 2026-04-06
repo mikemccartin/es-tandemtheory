@@ -349,7 +349,7 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: var(--space-8);
-    background: rgba(28, 28, 30, 0.98);
+    background: #1c1c1e;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: calc(var(--z-modal) - 1);
