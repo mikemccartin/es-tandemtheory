@@ -2497,3 +2497,54 @@ body {
 .tandem-tool.is-flipped .tandem-tool__back {
   visibility: visible !important;
 }
+
+/* ======== MOBILE NAV OVERRIDE ======== */
+/* Must be at end of file to win specificity */
+@media (max-width: 900px) {
+  .nav__menu,
+  .nav-menu,
+  #navMenu {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #0a0a0b !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+  }
+
+  .nav__menu.active,
+  .nav-menu.active,
+  #navMenu.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .nav__lang,
+  #navMenu .nav__lang {
+    margin-left: 0 !important;
+    font-size: 1.25rem !important;
+    padding: 0.5rem 1.5rem !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
+  }
+
+  .nav__lang-link,
+  .nav__lang-active,
+  .nav__lang-divider {
+    font-size: 1.25rem !important;
+  }
+}
