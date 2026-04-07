@@ -349,11 +349,11 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: var(--space-8);
-    background: #1c1c1e;
-    z-index: calc(var(--z-modal) - 1);
+    background: #0a0a0b !important;
+    opacity: 1 !important;
+    z-index: 9999;
     visibility: hidden;
     pointer-events: none;
-    transition: visibility var(--transition-base);
   }
 
   .nav__menu.active {
