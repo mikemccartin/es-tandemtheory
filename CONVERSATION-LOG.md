@@ -145,4 +145,61 @@ es-mx/
 
 ---
 
-*Session completed April 3, 2026*
+---
+
+## April 7 Follow-up: Mobile Nav Fix
+
+### Problem
+Mobile navigation on both tandemtheory.com and es.tandemtheory.com was transparent — page content showed through the open menu, and the EN|ES language switcher had no background at all.
+
+### Root causes
+1. Theme CSS used `opacity: 0/1` toggle — when opacity was 0, entire menu including background was invisible; when 1, `backdrop-filter: blur()` still let content bleed through
+2. Sub-pages used inconsistent nav classes (`nav-menu` vs `nav__menu` vs `#navMenu`) so mobile CSS rules only applied to some pages
+3. EN|ES switcher on sub-pages used inline styles with no class — mobile CSS overrides couldn't target it
+4. On WordPress, CSS injected via REST API into page content never rendered because `front-page.php` doesn't call `the_content()`
+
+### What worked
+
+**ES site (styles.css at end of file):**
+```css
+@media (max-width: 900px) {
+  .nav__menu, .nav-menu, #navMenu {
+    position: fixed !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #0a0a0b !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: 9999 !important;
+    /* ... full flex centering */
+  }
+  .nav__menu.active, .nav-menu.active, #navMenu.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+```
+- Targets ALL nav class variants
+- `!important` on everything — end of file for specificity
+- Solid `#0a0a0b` — zero transparency
+- Also replaced inline-styled lang switcher on 9 sub-pages with class-based `nav__lang`
+- Added missing lang switcher to aviso-de-privacidad.html
+
+**WordPress live site (WPCode CSS Snippet):**
+- Same CSS, minified, as a WPCode CSS Snippet
+- Auto Insert → Site Wide Header → Active
+- Title: "Mobile Nav + Lang Switcher Fix"
+- This is the ONLY reliable way to add CSS to the live WordPress site
+
+### What did NOT work for WordPress
+- REST API page content injection (`front-page.php` ignores `the_content()`)
+- REST API `<script>` tag payloads (Cloudflare WAF blocks them)
+- REST API `<style>` tag payloads (WordPress strips from raw)
+- Theme file uploads via REST API (WP Engine blocks plugin operations)
+- Multiple rounds of `backdrop-filter`, `rgba` backgrounds, partial opacity
+
+### Lesson
+For the live WordPress site, always use WPCode snippets (CSS or JS) for frontend changes. Don't try to work around Cloudflare or the REST API — go straight to WPCode.
+
+*Session updated April 7, 2026*
