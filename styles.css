@@ -318,6 +318,40 @@ body {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Language Switcher */
+.nav__lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+}
+
+.nav__lang-link {
+  color: var(--white-60);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.nav__lang-link:hover {
+  color: var(--white);
+}
+
+.nav__lang-divider {
+  color: var(--white-20);
+}
+
+.nav__lang-active {
+  color: var(--red-accent);
+  font-weight: 600;
+}
+
 /* Color Bar under Nav */
 .nav__color-bar {
   position: absolute;
